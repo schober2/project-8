@@ -1,0 +1,13 @@
+
+
+
+<h1>A Listing of Holidays!</h1>
+<p><b>For this month in the US:</b>
+  <% if @pictures.any? %>
+    <% @holidays.each do |x| %>
+      </br>
+      <%= x[0]['date'] %> <%= x[0]['name'] %>
+    <% end %>
+  <% else %>
+  <% end %>
+ </p>

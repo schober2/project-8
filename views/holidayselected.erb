@@ -1,0 +1,12 @@
+<h1>A Listing of Holidays!</h1>
+<% @country={"GB"=>"United Kingdom","US"=>"United States"} %>
+<p><b><%= @country[params['Country']] %> <%= params['Year']%>-<%= params['Month'] %>:</b>
+  <% @holidays=HolidApi.get(country: params['Country'], year: params['Year'], month: params['Month']) %>
+  <% @holidays.each do |x| %>
+    </br>
+    <%= x[0]['date'] %> <%= x[0]['name'] %>
+  <% end %>
+  <form action="/holiday/select">
+    <button type="submit">Change Selection</button>
+  </form>
+</p>
